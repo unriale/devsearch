@@ -1,12 +1,15 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<h1>Projects template</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ex porro,
-     perferendis maxime asperiores architecto quibusdam dolore, 
-     adipisci quod cupiditate consequatur corrupti, 
-     veritatis ratione exercitationem! 
-     Voluptates voluptatem blanditiis
-     perferendis delectus?</p>
+<hr/>
+<h1>Projects list</h1>
+
+<ul>
+     {% for project in projectsList %}
+          <li>
+               <a href="{% url 'project' project.id %}">{{ project.title }}</a>
+          </li>
+     {% endfor %}
+</ul>
 
 {% endblock %}
